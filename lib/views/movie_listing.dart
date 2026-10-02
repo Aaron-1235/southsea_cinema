@@ -17,7 +17,7 @@ class MovieListing extends StatelessWidget {
       drawer: const NavDrawer(),
       body: Container(
         color: cinemaSurface,
-        child: const Column(
+        child:  const Column(
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
           
@@ -33,16 +33,25 @@ class MovieListing extends StatelessWidget {
           Text('Selct Quantities (Up to 5 in total)'),
 
           Row(
-              children: [
-                Text('Adults(£7.50)'),
-              ],
-          )
-          
+            children: [
+              DropdownMenu<int>(
+                initialSelection: 0,
 
-          
-          ]
-        ),
-        
+                dropdownMenuEntries: [
+                  DropdownMenuEntry(value: 1, label: '1'),
+                  DropdownMenuEntry(value: 2, label: '2'),
+                  DropdownMenuEntry(value: 3, label: '3'),
+                  DropdownMenuEntry(value: 4, label: '4'),
+                  DropdownMenuEntry(value: 5, label: '5'),
+                ],
+              ),
+                
+                
+              Text('Adults(£7.50)'),
+            ],
+          ),
+        ]),
+             
 
       )
     );
