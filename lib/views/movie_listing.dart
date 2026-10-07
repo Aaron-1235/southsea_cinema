@@ -71,6 +71,15 @@ class _MovieListingState extends State<MovieListing> {
                   ),
                   ),
 
+                const Text(
+                  'Tickets',
+                  style: TextStyle(
+                    color: cinemaFontWhite,
+                    fontSize: 14,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+
                 Row(
                   children: [
                     DropdownMenu<int>(
