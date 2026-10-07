@@ -24,21 +24,52 @@ class _MovieListingState extends State<MovieListing> {
         ),
         drawer: const NavDrawer(),
         body: Container(
-          color: cinemaSurface,
+          color: cinemaBackground,
           child: Column(
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
-                const Text('Rush Hour  (1998) (15)  '),
+                const Text(
+                  'Rush Hour (1998) (15)  ',
+                  style: TextStyle(
+                    color: cinemaFontWhite,
+                    fontSize: 22,
+                    fontWeight: FontWeight.bold,
+                  )
+                  ),
+
 
                 const Text(
-                    'Two people rush to save the president\'s daughter from a gang of criminals.'),
+                    'Two people rush to save the president\'s daughter from a gang of criminals.',
+                    style: TextStyle(
+                      color: cinemaFontWhite,
+                      fontSize: 14,
+                    ),
+                    ),
 
-                const Text('Southsea Cinema room'),
+                const Text(
+                  'Southsea Cinema Room',
+                  style: TextStyle(
+                    color: cinemaFontWhite,
+                    fontSize: 14,
+                  ),
+                  ),
 
-                const Text('Thursday 22nd Oct 2026 18:00-1938'),
+                const Text(
+                  'Thursday 22nd Oct 2026 18:00 - 19:38',
+                  style: TextStyle(
+                    color: cinemaFontWhite,
+                    fontSize: 14,
+                  ),
+                  ),
 
                 //SizedBox(height: 20),
-                const Text('Selct Quantities (Up to 5 in total)'),
+                const Text(
+                  'Select Quantities (Up to 5 in total)',
+                  style: TextStyle(
+                    color: cinemaFontWhite,
+                    fontSize: 14,
+                  ),
+                  ),
 
                 Row(
                   children: [
@@ -59,6 +90,10 @@ class _MovieListingState extends State<MovieListing> {
                       ],
                     ),
                     const Text('Adults(£7.50)'),
+                    ElevatedButton(
+                      onPressed: () => print('The number of tickets selected is $_quantity'),
+                      child: const Text('Add to order'),
+                      )
 
                   ],
                 ),
