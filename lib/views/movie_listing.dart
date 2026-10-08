@@ -26,7 +26,7 @@ class _MovieListingState extends State<MovieListing> {
         body: Container(
           color: cinemaBackground,
           child: Column(
-              mainAxisAlignment: MainAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 const Text(
                   'Rush Hour (1998) (15)  ',
@@ -99,13 +99,12 @@ class _MovieListingState extends State<MovieListing> {
                       ],
                     ),
                     const Text('Adults(£7.50)'),
-                    ElevatedButton(
-                      onPressed: () => print('The number of tickets selected is $_quantity'),
-                      child: const Text('Add to order'),
-                      )
-
                   ],
                 ),
+                ElevatedButton(
+                  onPressed: () => print('The number of tickets selected is $_quantity'), 
+                  child: const Text('Add to order'),
+                  )
               ]),
         ));
   }
