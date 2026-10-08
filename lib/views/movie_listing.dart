@@ -38,6 +38,7 @@ class _MovieListingState extends State<MovieListing> {
                   ),
 
 
+                SizedBox(height: 20),
                 const Text(
                     'Two people rush to save the president\'s daughter from a gang of criminals.',
                     style: TextStyle(
@@ -46,6 +47,7 @@ class _MovieListingState extends State<MovieListing> {
                     ),
                     ),
 
+                SizedBox(height: 20),
                 const Text(
                   'Southsea Cinema Room',
                   style: TextStyle(
@@ -62,7 +64,7 @@ class _MovieListingState extends State<MovieListing> {
                   ),
                   ),
 
-                //SizedBox(height: 20),
+                SizedBox(height: 20),
                 const Text(
                   'Select Quantities (Up to 5 in total)',
                   style: TextStyle(
@@ -71,6 +73,7 @@ class _MovieListingState extends State<MovieListing> {
                   ),
                   ),
 
+                SizedBox(height: 20),
                 const Text(
                   'Tickets',
                   style: TextStyle(
