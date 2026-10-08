@@ -80,31 +80,54 @@ class _MovieListingState extends State<MovieListing> {
                   ),
                 ),
 
-                Row(
-                  children: [
-                    DropdownMenu<int>(
-                      initialSelection: 0,
-                      onSelected: (value) {
-                          setState(() {
-                            _quantity = value ?? 0;
-                          });
-                        },
-                      dropdownMenuEntries: [
-                        DropdownMenuEntry(value: 0, label: '0'),
-                        DropdownMenuEntry(value: 1, label: '1'),
-                        DropdownMenuEntry(value: 2, label: '2'),
-                        DropdownMenuEntry(value: 3, label: '3'),
-                        DropdownMenuEntry(value: 4, label: '4'),
-                        DropdownMenuEntry(value: 5, label: '5'),
-                      ],
-                    ),
-                    const Text('Adults(£7.50)'),
-                  ],
-                ),
-                ElevatedButton(
-                  onPressed: () => print('The number of tickets selected is $_quantity'), 
-                  child: const Text('Add to order'),
-                  )
+                LayoutBuilder(
+                  builder: (context, constraints) {
+                    if (constraints.maxWidth > 1000) {
+                      return Row(
+                        children: [
+                          DropdownMenu<int>(
+                            initialSelection: 0,
+                            onSelected: (value) {
+                              setState(() {
+                                _quantity = value ?? 0;
+                              });
+                            },
+                          dropdownMenuEntries: [
+                            DropdownMenuEntry(value: 0, label: '0'),
+                            DropdownMenuEntry(value: 1, label: '1'),
+                            DropdownMenuEntry(value: 2, label: '2'),
+                            DropdownMenuEntry(value: 3, label: '3'),
+                            DropdownMenuEntry(value: 4, label: '4'),
+                            DropdownMenuEntry(value: 5, label: '5'),
+                          ],
+                          ),
+                          const Text('Adults(£7.50)'),
+                        ],
+                        );
+                    } else {
+                      return Row(
+                        children: [
+                          DropdownMenu<int>(
+                            initialSelection: 0,
+                            onSelected: (value) {
+                              setState(() {
+                                _quantity = value ?? 0;
+                              });
+                            },
+                          dropdownMenuEntries: [
+                            DropdownMenuEntry(value: 0, label: '0'),
+                            DropdownMenuEntry(value: 1, label: '1'),
+                            DropdownMenuEntry(value: 2, label: '2'),
+                            DropdownMenuEntry(value: 3, label: '3'),
+                            DropdownMenuEntry(value: 4, label: '4'),
+                            DropdownMenuEntry(value: 5, label: '5'),
+                          ],
+                          ),
+                          const Text('Adults(£7.50)'),
+                        ],
+                      );
+                    }
+                  },)
               ]),
         ));
   }
