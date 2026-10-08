@@ -82,7 +82,7 @@ class _MovieListingState extends State<MovieListing> {
 
                 LayoutBuilder(
                   builder: (context, constraints) {
-                    if (constraints.maxWidth > 1000) {
+                    if (constraints.maxWidth > 600) {
                       return Row(
                         children: [
                           DropdownMenu<int>(
@@ -102,10 +102,14 @@ class _MovieListingState extends State<MovieListing> {
                           ],
                           ),
                           const Text('Adults(£7.50)'),
+                          ElevatedButton(
+                            onPressed: () => print('The number of tickets selected is $_quantity'), 
+                            child: const Text('Add to order'),
+                          )
                         ],
                         );
                     } else {
-                      return Row(
+                      return Column(
                         children: [
                           DropdownMenu<int>(
                             initialSelection: 0,
@@ -124,6 +128,10 @@ class _MovieListingState extends State<MovieListing> {
                           ],
                           ),
                           const Text('Adults(£7.50)'),
+                          ElevatedButton(
+                            onPressed: () => print('The number of tickets selected is $_quantity'), 
+                            child: const Text('Add to order'),
+                          )
                         ],
                       );
                     }
