@@ -82,6 +82,10 @@ class _MovieListingState extends State<MovieListing> {
                     fontWeight: FontWeight.bold,
                   ),
                 ),
+                SizedBox(height: 20,),
+                Text(
+                  '$_quantity amount of ticets'
+                ),
 
                 LayoutBuilder(
                   builder: (context, constraints) {
