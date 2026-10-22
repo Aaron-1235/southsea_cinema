@@ -10,7 +10,7 @@ class MovieRepository {
         age_rating: '18', 
         screening_time: '17;30', 
         ticket_price: 7.50, 
-        poster_imagepath: 'assets/images/_(1).jpeg'
+        poster_imagepath: 'assets/images/_ (1).jpeg'
       ),
       Movie(
         id: "ocean's eleven", 
