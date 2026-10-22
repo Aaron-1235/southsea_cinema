@@ -3,6 +3,7 @@ import 'package:southsea_cinema/constants.dart';
 import 'package:southsea_cinema/views/home_view.dart';
 import 'package:southsea_cinema/views/movie_listing.dart';
 
+
 void main() {
   runApp(const SouthseaCinemaApp());
 }
@@ -14,6 +15,7 @@ class SouthseaCinemaApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Southsea Cinema & Arts Centre - ',
+      home: MenuScreen(),
       debugShowCheckedModeBanner: false,
       theme: ThemeData.dark().copyWith(
         scaffoldBackgroundColor: cinemaBackground,
@@ -25,7 +27,7 @@ class SouthseaCinemaApp extends StatelessWidget {
       ),
       initialRoute: '/',
       routes: {
-        '/': (context) => const HomeView(),
+        //'/': (context) => const MenuScreen(),
         '/listing': (context) => const MovieListing(),
       },
     );
