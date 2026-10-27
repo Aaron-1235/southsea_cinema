@@ -18,7 +18,11 @@ class MenuScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Movies'),
+        backgroundColor: cinemaSurface,
+        iconTheme: const IconThemeData(color: cinemaBrand),
+        elevation: 0,
       ),
+      drawer: const NavDrawer(),
       body: ListView.builder(
         itemCount: movies.length,
         itemBuilder: ((context, index) {

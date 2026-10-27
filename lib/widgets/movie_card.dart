@@ -10,6 +10,7 @@ class MovieCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
+        color: Colors.transparent,
         margin: EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
         child: Padding(
           padding: EdgeInsets.all(8.0),
@@ -21,12 +22,12 @@ class MovieCard extends StatelessWidget {
                 children: [
                   Image.asset(
                     movie.poster_imagepath,
-                    width: 80,
-                    height: 80,
+                    width: 100,
+                    height: 150,
                     fit: BoxFit.cover,
                   ),
                   const SizedBox(width: 16),
-                  Expanded(
+                  Expanded( 
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
@@ -44,13 +45,13 @@ class MovieCard extends StatelessWidget {
                         ),
                         const SizedBox(height: 8),
                         Text(
-                          movie.screening_time,
+                          movie.synopsis,
                           style: const TextStyle(color: cinemaFontWhite),
                         ),
                         const SizedBox(height: 8),
                         Text(
-                          movie.synopsis,
-                          style: const TextStyle(color: Colors.black54),
+                          'BOOK TICKETS',
+                          style: TextStyle(color: cinemaFontWhite),
                         ),
                       ],
                     ),
@@ -62,20 +63,20 @@ class MovieCard extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Text(
-                    '£${movie.ticket_price.toStringAsFixed(2)}',
+                    movie.screening_time,
                     style: const TextStyle(
                       fontSize: 16,
-                      fontWeight: FontWeight.bold,
+                      color: cinemaFontWhite,
                     ),
                   ),
                   ElevatedButton(
-                    onPressed: () {}, 
+                    onPressed: () => print('Ticket booked'),
                     style: ElevatedButton.styleFrom(
                       backgroundColor: cinemaBrand,
                       foregroundColor: cinemaFontWhite,
                       shape: const RoundedRectangleBorder(),
                     ),
-                    child: const Text('Buy'),
+                    child: const Text('BOOK NOW'),
                   ),
                 ],
               )
