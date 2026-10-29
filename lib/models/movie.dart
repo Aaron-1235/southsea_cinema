@@ -18,5 +18,5 @@ class Movie {
   
   });
 
-
+  String get formattedPrice => '£${ticket_price.toStringAsFixed(2)}';
 }
