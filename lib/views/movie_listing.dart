@@ -1,13 +1,22 @@
 import 'package:flutter/material.dart';
 import 'package:southsea_cinema/constants.dart';
 import 'package:southsea_cinema/widgets/nav_drawer.dart';
+import 'package:southsea_cinema/models/movie.dart';
 
 class MovieListing extends StatefulWidget {
-  const MovieListing({super.key});
+  final Movie movie;
+  final int maxQuantity;
+  
+  const MovieListing({
+    super.key,
+    required this.movie,
+    this.maxQuantity = 10
+    });
 
   @override
-  State<MovieListing> createState() => _MovieListingState();
-
+  State<MovieListing> createState() {
+    return _MovieListingState();
+  }
 }
 
 class _MovieListingState extends State<MovieListing> {
@@ -108,7 +117,9 @@ class _MovieListingState extends State<MovieListing> {
                             DropdownMenuEntry(value: 5, label: '5'),
                           ],
                           ),
-                          const Text('Adults(£7.50)'),
+                          Text(
+                            'Adults (${widget.movie.formattedPrice})',
+                          ),
                           ElevatedButton(
                             onPressed: () => print('The number of tickets selected is $_quantity'), 
                             child: const Text('Add to order'),
@@ -134,7 +145,9 @@ class _MovieListingState extends State<MovieListing> {
                             DropdownMenuEntry(value: 5, label: '5'),
                           ],
                           ),
-                          const Text('Adults(£7.50)'),
+                          Text(
+                            'Adults (${widget.movie.formattedPrice})'
+                          ),
                           ElevatedButton(
                             onPressed: () => print('The number of tickets selected is $_quantity'), 
                             child: const Text('Add to order'),
