@@ -22,7 +22,7 @@ class MovieCard extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Image.asset(
-                    movie.poster_imagepath,
+                    movie.posterImagepath,
                     width: 100,
                     height: 150,
                     fit: BoxFit.cover,
@@ -41,7 +41,7 @@ class MovieCard extends StatelessWidget {
                         ),
                         const SizedBox(height: 4),
                         Text(
-                          movie.age_rating,
+                          movie.ageRating,
                           style: const TextStyle(color: cinemaBrand),
                         ),
                         const SizedBox(height: 8),
@@ -64,7 +64,7 @@ class MovieCard extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Text(
-                    movie.screening_time,
+                    movie.screeningTime,
                     style: const TextStyle(
                       fontSize: 16,
                       color: cinemaFontWhite,
