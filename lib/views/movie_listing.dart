@@ -6,12 +6,8 @@ import 'package:southsea_cinema/models/movie.dart';
 class MovieListing extends StatefulWidget {
   final Movie movie;
   final int maxQuantity;
-  
-  const MovieListing({
-    super.key,
-    required this.movie,
-    this.maxQuantity = 10
-    });
+
+  const MovieListing({super.key, required this.movie, this.maxQuantity = 10});
 
   @override
   State<MovieListing> createState() {
@@ -22,7 +18,7 @@ class MovieListing extends StatefulWidget {
 class _MovieListingState extends State<MovieListing> {
   int _quantity = 0;
 
- @override
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
@@ -34,129 +30,126 @@ class _MovieListingState extends State<MovieListing> {
         drawer: const NavDrawer(),
         body: Container(
           color: cinemaBackground,
-          child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                const Text(
-                  'Rush Hour (1998) (15)  ',
-                  style: TextStyle(
-                    color: cinemaFontWhite,
-                    fontSize: 22,
-                    fontWeight: FontWeight.bold,
-                  )
-                  ),
-
-
-                SizedBox(height: 20),
-                const Text(
-                    'Two people rush to save the president\'s daughter from a gang of criminals.',
-                    style: TextStyle(
-                      color: cinemaFontWhite,
-                      fontSize: 14,
-                    ),
-                    ),
-
-                SizedBox(height: 20),
-                const Text(
-                  'Southsea Cinema Room',
-                  style: TextStyle(
-                    color: cinemaFontWhite,
-                    fontSize: 14,
-                  ),
-                  ),
-
-                const Text(
-                  'Thursday 22nd Oct 2026 18:00 - 19:38',
-                  style: TextStyle(
-                    color: cinemaFontWhite,
-                    fontSize: 14,
-                  ),
-                  ),
-
-                SizedBox(height: 20),
-                const Text(
-                  'Select Quantities (Up to 5 in total)',
-                  style: TextStyle(
-                    color: cinemaFontWhite,
-                    fontSize: 14,
-                  ),
-                  ),
-
-                SizedBox(height: 20),
-                const Text(
-                  'Tickets',
-                  style: TextStyle(
-                    color: cinemaFontWhite,
-                    fontSize: 14,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-                SizedBox(height: 20,),
-                Text(
-                  '$_quantity amount of ticets'
-                ),
-
-                LayoutBuilder(
-                  builder: (context, constraints) {
-                    if (constraints.maxWidth > 600) {
-                      return Row(
-                        children: [
-                          DropdownMenu<int>(
-                            initialSelection: 0,
-                            onSelected: (value) {
-                              setState(() {
-                                _quantity = value ?? 0;
-                              });
-                            },
-                          dropdownMenuEntries: [
-                            DropdownMenuEntry(value: 0, label: '0'),
-                            DropdownMenuEntry(value: 1, label: '1'),
-                            DropdownMenuEntry(value: 2, label: '2'),
-                            DropdownMenuEntry(value: 3, label: '3'),
-                            DropdownMenuEntry(value: 4, label: '4'),
-                            DropdownMenuEntry(value: 5, label: '5'),
-                          ],
-                          ),
-                          Text(
-                            'Adults (${widget.movie.formattedPrice})',
-                          ),
-                          ElevatedButton(
-                            onPressed: () => print('The number of tickets selected is $_quantity'), 
-                            child: const Text('Add to order'),
-                          )
+          child:
+              Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+            const Text('Rush Hour (1998) (15)  ',
+                style: TextStyle(
+                  color: cinemaFontWhite,
+                  fontSize: 22,
+                  fontWeight: FontWeight.bold,
+                )),
+            SizedBox(height: 20),
+            const Text(
+              'Two people rush to save the president\'s daughter from a gang of criminals.',
+              style: TextStyle(
+                color: cinemaFontWhite,
+                fontSize: 14,
+              ),
+            ),
+            SizedBox(height: 20),
+            const Text(
+              'Southsea Cinema Room',
+              style: TextStyle(
+                color: cinemaFontWhite,
+                fontSize: 14,
+              ),
+            ),
+            const Text(
+              'Thursday 22nd Oct 2026 18:00 - 19:38',
+              style: TextStyle(
+                color: cinemaFontWhite,
+                fontSize: 14,
+              ),
+            ),
+            SizedBox(height: 20),
+            const Text(
+              'Select Quantities (Up to 5 in total)',
+              style: TextStyle(
+                color: cinemaFontWhite,
+                fontSize: 14,
+              ),
+            ),
+            SizedBox(height: 20),
+            const Text(
+              'Tickets',
+              style: TextStyle(
+                color: cinemaFontWhite,
+                fontSize: 14,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+            SizedBox(
+              height: 20,
+            ),
+            Text('$_quantity amount of ticets'),
+            LayoutBuilder(
+              builder: (context, constraints) {
+                if (constraints.maxWidth > 600) {
+                  return Row(
+                    children: [
+                      DropdownMenu<int>(
+                        initialSelection: 0,
+                        onSelected: (value) {
+                          setState(() {
+                            _quantity = value ?? 0;
+                          });
+                        },
+                        dropdownMenuEntries: [
+                          DropdownMenuEntry(value: 0, label: '0'),
+                          DropdownMenuEntry(value: 1, label: '1'),
+                          DropdownMenuEntry(value: 2, label: '2'),
+                          DropdownMenuEntry(value: 3, label: '3'),
+                          DropdownMenuEntry(value: 4, label: '4'),
+                          DropdownMenuEntry(value: 5, label: '5'),
                         ],
-                        );
-                    } else {
-                      return Column(
-                        children: [
-                          DropdownMenu<int>(
-                            initialSelection: 0,
-                            onSelected: (value) {
-                              setState(() {
-                                _quantity = value ?? 0;
-                              });
-                            },
-                          dropdownMenuEntries: [
-                            DropdownMenuEntry(value: 0, label: '0'),
-                            DropdownMenuEntry(value: 1, label: '1'),
-                            DropdownMenuEntry(value: 2, label: '2'),
-                            DropdownMenuEntry(value: 3, label: '3'),
-                            DropdownMenuEntry(value: 4, label: '4'),
-                            DropdownMenuEntry(value: 5, label: '5'),
-                          ],
-                          ),
-                          Text(
-                            'Adults (${widget.movie.formattedPrice})'
-                          ),
-                          ElevatedButton(
-                            onPressed: () => print('The number of tickets selected is $_quantity'), 
-                            child: const Text('Add to order'),
-                          )
+                      ),
+                      Text(
+                        'Adults (${widget.movie.formattedPrice})',
+                      ),
+                      ElevatedButton(
+                        onPressed: () {
+                          setState(() {
+                            'The number of tickets selected is $_quantity';
+                          });
+                        },
+                        child: const Text('Add to order'),
+                      )
+                    ],
+                  );
+                } else {
+                  return Column(
+                    children: [
+                      DropdownMenu<int>(
+                        initialSelection: 0,
+                        onSelected: (value) {
+                          setState(() {
+                            _quantity = value ?? 0;
+                          });
+                        },
+                        dropdownMenuEntries: [
+                          DropdownMenuEntry(value: 0, label: '0'),
+                          DropdownMenuEntry(value: 1, label: '1'),
+                          DropdownMenuEntry(value: 2, label: '2'),
+                          DropdownMenuEntry(value: 3, label: '3'),
+                          DropdownMenuEntry(value: 4, label: '4'),
+                          DropdownMenuEntry(value: 5, label: '5'),
                         ],
-                      );
-                    }
-                  },)
-              ]),
+                      ),
+                      Text('Adults (${widget.movie.formattedPrice})'),
+                      ElevatedButton(
+                        onPressed: () {
+                          setState(() {
+                            'The number of tickets selected is $_quantity';
+                          });
+                        },
+                        child: const Text('Add to order'),
+                      )
+                    ],
+                  );
+                }
+              },
+            )
+          ]),
         ));
   }
 }

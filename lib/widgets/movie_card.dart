@@ -28,7 +28,7 @@ class MovieCard extends StatelessWidget {
                     fit: BoxFit.cover,
                   ),
                   const SizedBox(width: 16),
-                  Expanded( 
+                  Expanded(
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
@@ -73,10 +73,9 @@ class MovieCard extends StatelessWidget {
                   ElevatedButton(
                     onPressed: () {
                       Navigator.push(
-                        context, 
+                        context,
                         MaterialPageRoute(
-                          builder: (context) => MovieListing(movie: movie)
-                        ),
+                            builder: (context) => MovieListing(movie: movie)),
                       );
                     },
                     style: ElevatedButton.styleFrom(

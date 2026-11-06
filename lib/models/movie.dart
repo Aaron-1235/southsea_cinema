@@ -1,3 +1,5 @@
+// ignore_for_file: non_constant_identifier_names
+
 class Movie {
   final String id;
   final String title;
@@ -7,16 +9,14 @@ class Movie {
   final double ticket_price;
   final String poster_imagepath;
 
-  const Movie({
-    required this.id, 
-    required this.title, 
-    required this.synopsis, 
-    required this.age_rating, 
-    required this.screening_time, 
-    required this.ticket_price, 
-    required this.poster_imagepath
-  
-  });
+  const Movie(
+      {required this.id,
+      required this.title,
+      required this.synopsis,
+      required this.age_rating,
+      required this.screening_time,
+      required this.ticket_price,
+      required this.poster_imagepath});
 
   String get formattedPrice => '£${ticket_price.toStringAsFixed(2)}';
 }
